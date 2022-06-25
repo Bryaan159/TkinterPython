@@ -80,7 +80,7 @@ def showPdf():
     print(len(input2))
 
 
-    //todo:realizar mas validaciones
+    #todo:realizar mas validaciones
     if len(input1)>5 and len(input2)>7:
         screen = Toplevel(root)
         screen.title("PDF")
