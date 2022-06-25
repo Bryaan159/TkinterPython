@@ -81,12 +81,14 @@ def showPdf():
 
 
     #todo:realizar mas validaciones
-    if len(input1)>5 and len(input2)>7:
+    if len(input1)>7 and len(input2)>5:
         screen = Toplevel(root)
         screen.title("PDF")
         screen.geometry('925x500+300+200')
         screen.config(bg="white")
-        Label(screen,text='Hello Everyone',bg='#fff',font=('Calibri(Body)',50,'bold')).pack(expand=True)
+        img = PhotoImage(file='logoPDF.png')
+        Label(screen, image=img, bg='white').place(x=250, y=50)
+        Label(screen, text='PDF generado', bg='#fff', font=('Calibri(Body)', 50, 'bold')).place(x=250,y=350)
 
         screen.mainloop()
 
