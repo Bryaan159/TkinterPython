@@ -69,6 +69,8 @@ def num_info(e):
 
 
 #Definicion de funcion para nueva GUI dentro de otra
+
+
 def showPdf():
     input1 = user.get()
     input2 = code.get()
@@ -81,14 +83,25 @@ def showPdf():
 
 
     #todo:realizar mas validaciones
-    if len(input1)>7 and len(input2)>5:
+    if len(input1)>1:
         screen = Toplevel(root)
         screen.title("PDF")
         screen.geometry('925x500+300+200')
         screen.config(bg="white")
+        screen.resizable(False,False)
+
+
+        #Elementos que llevara la GUI
         img = PhotoImage(file='logoPDF.png')
-        Label(screen, image=img, bg='white').place(x=250, y=50)
-        Label(screen, text='PDF generado', bg='#fff', font=('Calibri(Body)', 50, 'bold')).place(x=250,y=350)
+        Label(screen, image=img, bg='white').place(x=250, y=20)
+        Label(screen, text='PDF generado', bg='#fff', font=('Calibri(Body)', 50, 'bold')).place(x=250,y=320)
+
+
+        def regresar():
+            screen.destroy()
+        frame1 = Frame(screen, width=300, height=80, bg="white")
+        frame1.place(x=345, y=410)
+        Button(frame1,width=30, pady=7, text='Introducir otra funcion', bg='#57a1f8', fg='white', border=0,command=regresar).place(x=0, y=0)
 
         screen.mainloop()
 
